@@ -6,15 +6,15 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-const flags = { afghanistan : '🇦🇫', 
-  albania: '🇦🇱', 
-  algeria: '🇩🇿', 
-  angola: '🇦🇴', 
-  antiguaandbarbuda: '🇦🇬', 
-  argentina: '🇦🇷', 
-  armenia: '🇦🇲', 
-  australia: '🇦🇺', 
-  austria: '🇦🇹', 
+const flags = { afghanistan : '🇦🇫',
+  albania: '🇦🇱',
+  algeria: '🇩🇿',
+  angola: '🇦🇴',
+  antiguaandbarbuda: '🇦🇬',
+  argentina: '🇦🇷',
+  armenia: '🇦🇲',
+  australia: '🇦🇺',
+  austria: '🇦🇹',
   azerbaijan: '🇦🇿',
   bahamas: '🇧🇸',
   bahrain: '🇧🇭',
@@ -27,7 +27,7 @@ const flags = { afghanistan : '🇦🇫',
   bolivia: '🇧🇴',
   bosniaandherzegovina: '🇧🇦',
   botswana: '🇧🇼',
-  brazil: '🇧🇷', 
+  brazil: '🇧🇷',
   brunei: '🇧🇳',
   bulgaria: '🇧🇬',
   burkinafaso: '🇧🇫',
@@ -37,7 +37,7 @@ const flags = { afghanistan : '🇦🇫',
 let keys = Object.keys(flags);
 
 rl.question("Welcome to Guess The Flag. In this game you will be shown the flag of a country and you must correctly identify it. Type 'play' to continue.\n", (answer1) => {
-  if(answer1 === "play") {
+  if (answer1 === "play") {
     let numOfGuesses = 0;
     let numOfCorrectGuesses = 0;
     const poseQuestion = function() {
@@ -52,19 +52,19 @@ rl.question("Welcome to Guess The Flag. In this game you will be shown the flag 
           console.log(`✅ Correct! ${numOfCorrectGuesses} out of ${numOfGuesses}.`);
         } else {
           numOfGuesses += 1;
-          console.log(`❌ Wrong! ${numOfCorrectGuesses} out of ${numOfGuesses}.`)
+          console.log(`❌ Wrong! ${numOfCorrectGuesses} out of ${numOfGuesses}.`);
         }
         if (numOfGuesses === 10) {
           console.log(`Game over. Final score: ${numOfCorrectGuesses} correct out of ${numOfGuesses}.`);
           rl.close();
         } else {
-          poseQuestion(); 
+          poseQuestion();
         }
       });
-    }
+    };
     poseQuestion();
   } else if (answer1 !== "play") {
-    console.log("Fuck right off then. And don't bother coming back.")
+    console.log("Fuck right off then. And don't bother coming back.");
     rl.close();
   }
 });
