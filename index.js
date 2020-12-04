@@ -1,5 +1,3 @@
-// this game presents the user with a country flag and asks them to correctly identify it.
-
 const readline = require('readline');
 const rl = readline.createInterface({
   input: process.stdin,
@@ -31,7 +29,25 @@ const flags = { afghanistan : '🇦🇫',
   brunei: '🇧🇳',
   bulgaria: '🇧🇬',
   burkinafaso: '🇧🇫',
-  burundi: '🇧🇮'
+  burundi: '🇧🇮',
+  cambodia: '🇰🇭',
+  cameroon: '🇨🇲',
+  canada: '🇨🇦',
+  caboverde: '🇨🇻',
+  centralafricanrepublic: '🇨🇫',
+  chad: '🇹🇩',
+  chile: '🇨🇱',
+  china: '🇨🇳',
+  colombia: '🇨🇴',
+  comoros: '🇰🇲',
+  democraticrepublicofthecongo: '🇨🇩',
+  republicofthecongo: '🇨🇬',
+  costarica: '🇨🇷',
+  cotedivoire: '🇨🇮',
+  croatia: '🇭🇷',
+  cuba: '🇨🇺',
+  cyprus: '🇨🇾',
+  czechia: '🇨🇿'
 };
 
 let keys = Object.keys(flags);
@@ -41,7 +57,7 @@ rl.question("Welcome to Guess The Flag. In this game you will be shown the flag 
     let numOfGuesses = 0;
     let numOfCorrectGuesses = 0;
     const poseQuestion = function() {
-      let index = Math.floor(Math.random() * 25);
+      let index = Math.floor(Math.random() * 43);
       let randomCountryName = keys[index];
       let randomFlag = flags[`${randomCountryName}`];
       rl.question(`What country has this flag?: ${randomFlag}\n`, (answer2) => {
