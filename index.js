@@ -62,7 +62,22 @@ const flags = { afghanistan : '🇦🇫',
   ethiopia: '🇪🇹',
   fiji: '🇫🇯',
   finland: '🇫🇮',
-  france: '🇫🇷'
+  france: '🇫🇷',
+  gabon: '🇬🇦',
+  gambia: '🇬🇲',
+  georgia: '🇬🇪',
+  germany: '🇩🇪',
+  ghana: '🇬🇭',
+  greece: '🇬🇷',
+  grenada: '🇬🇩',
+  guatemala: '🇬🇹',
+  guinea: '🇬🇳',
+  guineabissau: '🇬🇼',
+  guyana: '🇬🇾',
+  haiti: '🇭🇹',
+  honduras: '🇭🇳',
+  hungary: '🇭🇺',
+  
 };
 
 let keys = Object.keys(flags);
