@@ -77,7 +77,17 @@ const flags = { afghanistan : '🇦🇫',
   haiti: '🇭🇹',
   honduras: '🇭🇳',
   hungary: '🇭🇺',
-  
+  iceland: '🇮🇸',
+  india: '🇮🇳',
+  indonesia: '🇮🇩',
+  iran: '🇮🇷',
+  iraq: '🇮🇶',
+  ireland: '🇮🇪',
+  israel: '🇮🇱',
+  italy: '🇮🇹',
+  jamaica: '🇯🇲',
+  japan: '🇯🇵',
+  jordan: '🇯🇴'
 };
 
 let keys = Object.keys(flags);
@@ -87,7 +97,7 @@ rl.question("Welcome to Guess The Flag. In this game you will be shown the flag 
     let numOfGuesses = 0;
     let numOfCorrectGuesses = 0;
     const poseQuestion = function() {
-      let index = Math.floor(Math.random() * 43);
+      let index = Math.floor(Math.random() * 83);
       let randomCountryName = keys[index];
       let randomFlag = flags[`${randomCountryName}`];
       rl.question(`What country has this flag?: ${randomFlag}\n`, (answer2) => {
