@@ -47,7 +47,22 @@ const flags = { afghanistan : '🇦🇫',
   croatia: '🇭🇷',
   cuba: '🇨🇺',
   cyprus: '🇨🇾',
-  czechia: '🇨🇿'
+  czechia: '🇨🇿',
+  denmarK: '🇩🇰',
+  djibouti: '🇩🇯',
+  dominica: '🇩🇲',
+  dominicanrepublic: '🇩🇴',
+  ecuador: '🇪🇨',
+  egypt: '🇪🇬',
+  elsalvador: '🇸🇻',
+  equatorialguinea: '🇬🇶',
+  eritrea: '🇪🇷',
+  estonia: '🇪🇪',
+  eswatini: '🇸🇿',
+  ethiopia: '🇪🇹',
+  fiji: '🇫🇯',
+  finland: '🇫🇮',
+  france: '🇫🇷'
 };
 
 let keys = Object.keys(flags);
