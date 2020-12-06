@@ -13,7 +13,7 @@ rl.question("Welcome to Guess The Flag. In this game you will be shown ten(10) c
     let numOfGuesses = 0;
     let numOfCorrectGuesses = 0;
     const poseQuestion = function() {
-      let index = Math.floor(Math.random() * 138);
+      let index = Math.floor(Math.random() * 167);
       let randomCountryName = keys[index];
       let randomFlag = flags[`${randomCountryName}`];
       rl.question(`What country has this flag?: ${randomFlag}\n`, (answer2) => {
@@ -24,7 +24,7 @@ rl.question("Welcome to Guess The Flag. In this game you will be shown ten(10) c
           console.log(`✅ Correct! ${numOfCorrectGuesses} out of ${numOfGuesses}.`);
         } else {
           numOfGuesses += 1;
-          console.log(`❌ Wrong! ${numOfCorrectGuesses} out of ${numOfGuesses}.`);
+          console.log(`❌ Wrong! The answer is ${keys[index]}. ${numOfCorrectGuesses} out of ${numOfGuesses}.`);
         }
         if (numOfGuesses === 10) {
           console.log(`Game over. Final score: ${numOfCorrectGuesses} correct out of ${numOfGuesses}.`);
