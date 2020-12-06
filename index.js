@@ -8,12 +8,12 @@ const flags = require('./flags');
 
 let keys = Object.keys(flags);
 
-rl.question("Welcome to Guess The Flag. In this game you will be shown the flag of a country and you must correctly identify it. Type 'play' to continue.\n", (answer1) => {
+rl.question("Welcome to Guess The Flag. In this game you will be shown ten(10) country flags and you must correctly identify them. Type 'play' to continue.\n", (answer1) => {
   if (answer1 === "play") {
     let numOfGuesses = 0;
     let numOfCorrectGuesses = 0;
     const poseQuestion = function() {
-      let index = Math.floor(Math.random() * 83);
+      let index = Math.floor(Math.random() * 138);
       let randomCountryName = keys[index];
       let randomFlag = flags[`${randomCountryName}`];
       rl.question(`What country has this flag?: ${randomFlag}\n`, (answer2) => {
@@ -36,7 +36,7 @@ rl.question("Welcome to Guess The Flag. In this game you will be shown the flag 
     };
     poseQuestion();
   } else if (answer1 !== "play") {
-    console.log("Fuck right off then. And don't bother coming back.");
+    console.log(`You didn't press play. Guess you don't love me then.`);
     rl.close();
   }
 });
