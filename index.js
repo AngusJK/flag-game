@@ -35,16 +35,16 @@ rl.question("Welcome to Guess The Flag. In this game you will be shown ten(10) c
       }
       answerNumber(num);
       let multipleChoice = `  1. ${option1}\n  2. ${option2}\n  3. ${option3}\n  4. ${option4}\n`;
-      rl.question(`What country has this flag?: ${randomFlag}\n${multipleChoice}`, (answer2) => {
+      rl.question(`${numOfGuesses + 1}. What country has this flag?: ${randomFlag}\n${multipleChoice}`, (answer2) => {
         let guess = Number(answer2);
         //let guess = answer2.toLowerCase().trim().replace(/\s+/g, "");
         if (guess === correctNumber) {
           numOfCorrectGuesses += 1;
           numOfGuesses += 1;
-          console.log(`✅ Correct! ${numOfCorrectGuesses} out of ${numOfGuesses}.`);
+          console.log(`✅ Correct!`);
         } else {
           numOfGuesses += 1;
-          console.log(`❌ Wrong! The answer is ${flags[randomCountryName]["name"]}. ${numOfCorrectGuesses} out of ${numOfGuesses}.`);
+          console.log(`❌ Wrong! The answer is ${flags[randomCountryName]["name"]}.`);
         }
         if (numOfGuesses === 10) {
           console.log(`Game over. Final score: ${numOfCorrectGuesses} correct out of ${numOfGuesses}.`);
