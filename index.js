@@ -13,10 +13,15 @@ rl.question("Welcome to Guess The Flag. In this game you will be shown ten(10) c
     let numOfGuesses = 0;
     let numOfCorrectGuesses = 0;
     const poseQuestion = function() {
-      let index = Math.floor(Math.random() * 167);
+      let index = Math.floor(Math.random() * 8);
       let randomCountryName = keys[index];
-      let randomFlag = flags[`${randomCountryName}`];
-      rl.question(`What country has this flag?: ${randomFlag}\n`, (answer2) => {
+      let randomFlag = flags[`${randomCountryName}`]["flag"];
+      let option1 = keys[Math.floor(Math.random() * 193)];
+      let option2 = keys[Math.floor(Math.random() * 193)];
+      let option3 = keys[Math.floor(Math.random() * 193)];
+      let option4 = keys[Math.floor(Math.random() * 193)];      
+      let multipleChoice = `  1. ${option1}\n  2. ${option2}\n  3. ${option3}\n  4. ${option4}\n`;
+      rl.question(`What country has this flag?: ${randomFlag}\n${multipleChoice}`, (answer2) => {
         let guess = answer2.toLowerCase().trim().replace(/\s+/g, "");
         if (guess === keys[index]) {
           numOfCorrectGuesses += 1;
