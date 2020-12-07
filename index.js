@@ -13,13 +13,19 @@ rl.question("Welcome to Guess The Flag. In this game you will be shown ten(10) c
     let numOfGuesses = 0;
     let numOfCorrectGuesses = 0;
     const poseQuestion = function() {
-      let index = Math.floor(Math.random() * 35);
-      let randomCountryName = keys[index];
+      let indexArray = [];
+      while (indexArray.length < 6) {
+        let randomNum = Math.floor(Math.random() * 47);
+        if (indexArray.indexOf(randomNum) === -1) {
+          indexArray.push(randomNum);
+        }
+      }
+      let randomCountryName = keys[indexArray[0]];
       let randomFlag = flags[`${randomCountryName}`]["flag"];
-      let option1 = flags[keys[Math.floor(Math.random() * 35)]]["name"];
-      let option2 = flags[keys[Math.floor(Math.random() * 35)]]["name"];
-      let option3 = flags[keys[Math.floor(Math.random() * 35)]]["name"];
-      let option4 = flags[keys[Math.floor(Math.random() * 35)]]["name"];
+      let option1 = flags[keys[indexArray[1]]]["name"];
+      let option2 = flags[keys[indexArray[2]]]["name"];
+      let option3 = flags[keys[indexArray[3]]]["name"];
+      let option4 = flags[keys[indexArray[4]]]["name"];
       let num = Math.floor(Math.random() * 3 + 1);
       let correctNumber = num;
       let answerNumber = function() {
@@ -37,7 +43,9 @@ rl.question("Welcome to Guess The Flag. In this game you will be shown ten(10) c
       let multipleChoice = `  1. ${option1}\n  2. ${option2}\n  3. ${option3}\n  4. ${option4}\n`;
       rl.question(`${numOfGuesses + 1}. What country has this flag?: ${randomFlag}\n${multipleChoice}`, (answer2) => {
         let guess = Number(answer2);
-        //let guess = answer2.toLowerCase().trim().replace(/\s+/g, "");
+        //if (guess !== 1 && guess !== 2 && guess !== 3 && guess !== 4) {
+        //  console.log("That's not a valid guess. Try again.");
+        //}  
         if (guess === correctNumber) {
           numOfCorrectGuesses += 1;
           numOfGuesses += 1;
