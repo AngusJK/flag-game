@@ -15,7 +15,7 @@ rl.question("Welcome to Guess The Flag. In this game you will be shown ten(10) c
     const poseQuestion = function() {
       let indexArray = [];
       while (indexArray.length < 6) {
-        let randomNum = Math.floor(Math.random() * 47);
+        let randomNum = Math.floor(Math.random() * 83);
         if (indexArray.indexOf(randomNum) === -1) {
           indexArray.push(randomNum);
         }
@@ -26,7 +26,7 @@ rl.question("Welcome to Guess The Flag. In this game you will be shown ten(10) c
       let option2 = flags[keys[indexArray[2]]]["name"];
       let option3 = flags[keys[indexArray[3]]]["name"];
       let option4 = flags[keys[indexArray[4]]]["name"];
-      let num = Math.floor(Math.random() * 3 + 1);
+      let num = Math.floor(Math.random() * 4) + 1;
       let correctNumber = num;
       let answerNumber = function() {
         if (num === 1) {
