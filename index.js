@@ -15,7 +15,7 @@ rl.question("Welcome to Guess The Flag. In this game you will be shown ten(10) c
     const poseQuestion = function() {
       let indexArray = [];
       while (indexArray.length < 6) {
-        let randomNum = Math.floor(Math.random() * 83);
+        let randomNum = Math.floor(Math.random() * 193);
         if (indexArray.indexOf(randomNum) === -1) {
           indexArray.push(randomNum);
         }
@@ -38,27 +38,30 @@ rl.question("Welcome to Guess The Flag. In this game you will be shown ten(10) c
         } else if (num === 4) {
           option4 = flags[`${randomCountryName}`]["name"];
         }
-      }
+      };
       answerNumber(num);
       let multipleChoice = `  1. ${option1}\n  2. ${option2}\n  3. ${option3}\n  4. ${option4}\n`;
       rl.question(`${numOfGuesses + 1}. What country has this flag?: ${randomFlag}\n${multipleChoice}`, (answer2) => {
         let guess = Number(answer2);
-        //if (guess !== 1 && guess !== 2 && guess !== 3 && guess !== 4) {
-        //  console.log("That's not a valid guess. Try again.");
-        //}  
-        if (guess === correctNumber) {
+        const carryOn = function() {
+          if (numOfGuesses === 10) {
+            console.log(`Game over. Final score: ${numOfCorrectGuesses} correct out of ${numOfGuesses}.`);
+            rl.close();
+          } else {
+            poseQuestion();
+          }
+        }
+        if (guess !== 1 && guess !== 2 && guess !== 3 && guess !== 4) {
+          console.log("That's not a valid guess. Try again.");
+        } else if (guess === correctNumber) {
           numOfCorrectGuesses += 1;
           numOfGuesses += 1;
           console.log(`✅ Correct!`);
+          carryOn();
         } else {
           numOfGuesses += 1;
           console.log(`❌ Wrong! The answer is ${flags[randomCountryName]["name"]}.`);
-        }
-        if (numOfGuesses === 10) {
-          console.log(`Game over. Final score: ${numOfCorrectGuesses} correct out of ${numOfGuesses}.`);
-          rl.close();
-        } else {
-          poseQuestion();
+          carryOn();
         }
       });
     };
