@@ -50,9 +50,10 @@ rl.question("Welcome to Guess The Flag. In this game you will be shown ten(10) c
           } else {
             poseQuestion();
           }
-        }
+        };
         if (guess !== 1 && guess !== 2 && guess !== 3 && guess !== 4) {
-          console.log("That's not a valid guess. Try again.");
+          console.log('That is not a valid response. Please try again.');
+          poseQuestion();
         } else if (guess === correctNumber) {
           numOfCorrectGuesses += 1;
           numOfGuesses += 1;
